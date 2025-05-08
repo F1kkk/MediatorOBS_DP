@@ -5,6 +5,7 @@
 #include "ScoreSystem.h"
 #include <iostream>
 int main() {
+    std::cout << "=== Mediator Pattern Demo ===" << std::endl;
     EventMediator mediator;
     UI ui;
     SoundSystem sound;

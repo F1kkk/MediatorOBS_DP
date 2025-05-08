@@ -37,3 +37,14 @@ PlayerAttackEventSystem/
 │   ├── Enemy.cpp
 │   └── CMakeLists.txt
 └── README.md                   # This file
+
+
+Run Mediator
+cd "D:\Semester 4\Design pattern\MediatorOBS_DP\PlayerAttackEventSystem\mediator_version"
+g++ -o game_mediator main.cpp Player.cpp EventMediator.cpp UI.cpp SoundSystem.cpp ScoreSystem.cpp Enemy.cpp
+./game_mediator.exe
+
+Run Observer
+cd "D:\Semester 4\Design pattern\MediatorOBS_DP\PlayerAttackEventSystem\observer_version"
+g++ -o ObserverPattern main.cpp Player.cpp UI.cpp SoundSystem.cpp ScoreSystem.cpp Enemy.cpp -std=c++11 -I.
+.\ObserverPattern.exe
