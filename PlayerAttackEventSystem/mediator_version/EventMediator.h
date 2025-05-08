@@ -1,17 +1,18 @@
 #ifndef EVENT_MEDIATOR_H
 #define EVENT_MEDIATOR_H
-
 #include <vector>
-#include <functional>
 #include <string>
-
+#include "Enemy.h"
+class IListener {
+public:
+    virtual void onEvent(const std::string& event, const Enemy& enemy) = 0;
+    virtual ~IListener() = default;
+};
 class EventMediator {
 private:
-    std::vector<std::function<void(int, int)>> listeners;
-
+    std::vector<IListener*> listeners;
 public:
-    void registerListener(const std::function<void(int, int)>& listener);
-    void triggerEvent(const std::string& event, int damage, int enemyHealth);
+    void addListener(IListener* listener);
+    void triggerEvent(const std::string& event, const Enemy& enemy);
 };
-
-#endif // EVENT_MEDIATOR_H
+#endif

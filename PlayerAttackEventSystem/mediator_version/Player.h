@@ -1,17 +1,11 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
 #include "EventMediator.h"
-#include "Enemy.h"
-
 class Player {
 private:
-    EventMediator& mediator;
-    Enemy* enemy;
-
+    EventMediator* mediator;
 public:
-    Player(EventMediator& mediator, Enemy* enemy);
-    void attack(int damage = 10);
+    Player(EventMediator* m) : mediator(m) {}
+    void attack(Enemy& enemy);
 };
-
-#endif // PLAYER_H
+#endif

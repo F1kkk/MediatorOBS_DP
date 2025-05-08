@@ -1,6 +1,7 @@
 #include "UI.h"
 #include <iostream>
-
-void UI::operator()(int damage, int enemyHealth) {
-    std::cout << "Enemy HP Updated: " << enemyHealth << std::endl;
+void UI::onEvent(const std::string& event, const Enemy& enemy) {
+    if (event == "attack") {
+        std::cout << "Enemy HP Updated: " << enemy.getHealth() << std::endl;
+    }
 }

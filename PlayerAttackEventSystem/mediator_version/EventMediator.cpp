@@ -1,13 +1,9 @@
 #include "EventMediator.h"
-
-void EventMediator::registerListener(const std::function<void(int, int)>& listener) {
+void EventMediator::addListener(IListener* listener) {
     listeners.push_back(listener);
 }
-
-void EventMediator::triggerEvent(const std::string& event, int damage, int enemyHealth) {
-    if (event == "attack") {
-        for (const auto& listener : listeners) {
-            listener(damage, enemyHealth);
-        }
+void EventMediator::triggerEvent(const std::string& event, const Enemy& enemy) {
+    for (IListener* listener : listeners) {
+        listener->onEvent(event, enemy);
     }
 }

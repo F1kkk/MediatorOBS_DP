@@ -1,8 +1,7 @@
-#include "ScoreSystem.h"
+#include "SoundSystem.h"
 #include <iostream>
-
-void ScoreSystem::operator()(int damage, int enemyHealth) {
-    if (enemyHealth <= 0) {
-        std::cout << "Score Added if Enemy Dead" << std::endl;
+void SoundSystem::onEvent(const std::string& event, const Enemy& enemy) {
+    if (event == "attack") {
+        std::cout << "Play Attack Sound" << std::endl;
     }
 }

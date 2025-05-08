@@ -1,7 +1,7 @@
-#ifndef UI_H
-#define UI_H
+#ifndef SOUND_SYSTEM_H
+#define SOUND_SYSTEM_H
 #include "EventMediator.h"
-class UI : public IListener {
+class SoundSystem : public IListener {
 public:
     void onEvent(const std::string& event, const Enemy& enemy) override;
 };
