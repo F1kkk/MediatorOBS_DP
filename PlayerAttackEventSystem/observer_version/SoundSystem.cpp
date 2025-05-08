@@ -1,8 +1,8 @@
-#include "ScoreSystem.h"
+#include "SoundSystem.h"
 #include <iostream>
 
-void ScoreSystem::update(const std::string& event, int damage, int enemyHealth) {
-    if (event == "attack" && enemyHealth <= 0) {
-        std::cout << "Score Added if Enemy Dead" << std::endl;
+void SoundSystem::update(const std::string& event, int damage, int enemyHealth) {
+    if (event == "attack") {
+        std::cout << "Play Attack Sound" << std::endl;
     }
 }
