@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.10)
+project(ObserverPattern)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(SOURCES
+    main.cpp
+    Player.cpp
+    UI.cpp
+    SoundSystem.cpp
+    ScoreSystem.cpp
+    Enemy.cpp
+)
+
+add_executable(ObserverPattern ${SOURCES})
+
+target_include_directories(ObserverPattern PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

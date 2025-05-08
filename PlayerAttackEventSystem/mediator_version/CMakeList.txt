@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.10)
+project(MediatorPattern)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(SOURCES
+    main.cpp
+    Player.cpp
+    EventMediator.cpp
+    UI.cpp
+    SoundSystem.cpp
+    ScoreSystem.cpp
+    Enemy.cpp
+)
+
+add_executable(MediatorPattern ${SOURCES})
+
+target_include_directories(MediatorPattern PRIVATE .)
